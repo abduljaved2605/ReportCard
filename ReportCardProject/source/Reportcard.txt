@@ -1,0 +1,7 @@
+Student ID:  1  , name:Student_1
+Course:  Course 1, Teacher :Teacher 1
+Final Grade:  10
+Course:  course_2, Teacher :Teacher_2
+Final Grade:  20
+Course:  course_3, Teacher :Teacher_3
+Final Grade:  30
