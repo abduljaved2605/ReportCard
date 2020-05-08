@@ -32,7 +32,7 @@ public class ReportCardCSVReader {
 			{
 				records.add(values);
 			}
-			System.out.println(records);
+			//System.out.println(records);
 		}
 		
 		return records;
