@@ -44,7 +44,7 @@ public class ReportCardCSVReader {
 	 */
 	
 	
-	public void write(List data) throws IOException {
+	public static void write(List data) throws IOException {
 		File file = new File("source\\Reportcard.txt");
 		FileWriter writer = new FileWriter(file);
 		

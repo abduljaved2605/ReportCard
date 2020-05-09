@@ -9,7 +9,6 @@
 
 package com.reportcard.buisnessobject;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,7 +19,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.jupiter.api.Test;
 
 import com.reportcard.csv.CourseCSVReader;
 import com.reportcard.csv.MarksCSVReader;
@@ -43,6 +41,7 @@ class TestReportGenerator {
 	public static MarksCSVReader readMarksObj = new MarksCSVReader();
 	public static TestCSVReader readTestsObj = new TestCSVReader();
 
+	public static ReportCardCSVReader writeToFile = new ReportCardCSVReader();
 	/*
 	 * It returns records after reading
 	 * 
@@ -56,8 +55,9 @@ class TestReportGenerator {
 	{
 		student_record = readStudentObj.readStudentcsvfile();
 		List<Marks> marks_List = new ArrayList<Marks>();
-
+		List tofile = new ArrayList<>();
 		marks_record = readMarksObj.readMarksCSVReader();
+		course_record = readCourseObj.readCourseCSVReader();
 		
 		for(Student sID: student_record)
 		{
@@ -69,9 +69,24 @@ class TestReportGenerator {
 		
 			}
 			Student student = readStudentObj.lookupStudent(sID.getId());
+			Course course = readCourseObj.lookupCourse(sID.getId());
+			
+			
 			System.out.println("Student Id   "+student.getId()+"   Student name "+student.getName());
+			
+			
+			String name = "Student Id   "+student.getId()+"   Student name "+student.getName();
 			System.out.println("Total Average   "+marks_total/list_studentMarks.size());
+			
+			System.out.println("TEACHER NAME  "+course.getTeacher()+ " "+course.getName() );
+			
+			String avg = "Total Average   "+marks_total/list_studentMarks.size();
+			tofile.add(name);
+			tofile.add(avg);
 		}
+		
+		writeToFile.write(tofile);
+
 	}
 
 }
