@@ -1,0 +1,6 @@
+Student Id   1   Student name A
+Total Average   67
+Student Id   2   Student name B
+Total Average   59
+Student Id   3   Student name C
+Total Average   67
