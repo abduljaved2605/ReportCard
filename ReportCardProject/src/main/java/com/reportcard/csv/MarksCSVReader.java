@@ -21,7 +21,7 @@ public class MarksCSVReader extends ReportCardCSVReader{
 		{
 
 			String[] marks_record = marks_records.get(counter);
-			Marks marks = new Marks((Integer.parseInt(marks_record[0])),((marks_record[1])),(Integer.parseInt(marks_record[2])));
+			Marks marks = new Marks(((marks_record[0])),((marks_record[1])),(Integer.parseInt(marks_record[2])));
 			List<Marks> marks_list = map_Marks.get((marks_record[1]));
 			if(marks_list==null)
 			{
@@ -31,7 +31,7 @@ public class MarksCSVReader extends ReportCardCSVReader{
 			
 			marks_list.add(marks);
 			
-			System.out.println(marks.getTest_id()+" "+marks.getStudent()+" "+marks.getMark());
+			//System.out.println(marks.getTest_id()+" "+marks.getStudent()+" "+marks.getMark());
 					
 		}
 			

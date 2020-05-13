@@ -26,7 +26,7 @@ public class StudentsCSVReader extends ReportCardCSVReader{
 			
 			//list_students.add(student);
 			map_Student.put((record_name[0]), student);
-			System.out.println(student.getId()+"  "+student.getName());
+		//	System.out.println(student.getId()+"  "+student.getName());
 			
 			
 		}

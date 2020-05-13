@@ -49,6 +49,8 @@ class TestReportGenerator {
 	public static Collection<Student> student_record;
 	public static Collection<Course> course_record;
 	public static Map<String,List<Marks>> marks_record;
+	
+	
 	public static List tests_record;
 
 	public static void main(String args[]) throws IOException
@@ -58,16 +60,13 @@ class TestReportGenerator {
 		List tofile = new ArrayList<>();
 		marks_record = readMarksObj.readMarksCSVReader();
 		course_record = readCourseObj.readCourseCSVReader();
+		readTestsObj.readTestCSVReader();
 		
 		for(Student sID: student_record)
 		{
 			List<Marks> list_studentMarks = readMarksObj.lookupforStudent(sID.getId());
 			int marks_total=0;
-			for(Marks studentMark :list_studentMarks)
-			{
-				marks_total =marks_total+studentMark.getMark();
-		
-			}
+			
 			Student student = readStudentObj.lookupStudent(sID.getId());
 			Course course = readCourseObj.lookupCourse(sID.getId());
 			
@@ -75,10 +74,23 @@ class TestReportGenerator {
 			System.out.println("Student Id   "+student.getId()+"   Student name "+student.getName());
 			
 			
+			for(Marks studentMark :list_studentMarks)
+			{
+				marks_total =marks_total+studentMark.getMark();
+				Tests test = readTestsObj.lookupforTest(studentMark.getTest_id());
+				System.out.println(test.getCourse_id()+"  "+test.getWeight());
+				//studentMark.getTest_id();
+				
+		
+			}
+			
+
+			
+			
 			String name = "Student Id   "+student.getId()+"   Student name "+student.getName();
 			System.out.println("Total Average   "+marks_total/list_studentMarks.size());
 			
-			System.out.println("TEACHER NAME  "+course.getTeacher()+ " "+course.getName() );
+			//System.out.println("TEACHER NAME  "+course.getTeacher()+ " "+course.getName() );
 			
 			String avg = "Total Average   "+marks_total/list_studentMarks.size();
 			tofile.add(name);
