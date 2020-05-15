@@ -15,7 +15,7 @@ public class MarksCSVReader extends ReportCardCSVReader{
 
 	public Map<String,List<Marks>> readMarksCSVReader () throws IOException
 	{
-		List<String[]> marks_records = super.readcsvfile("source\\marks.csv");
+		List<String[]> marks_records = super.readcsvfile("source/marks.csv");
 		
 		for(int counter=1;counter<marks_records.size();counter++)
 		{
@@ -30,9 +30,7 @@ public class MarksCSVReader extends ReportCardCSVReader{
 			}
 			
 			marks_list.add(marks);
-			
-			//System.out.println(marks.getTest_id()+" "+marks.getStudent()+" "+marks.getMark());
-					
+								
 		}
 			
 		return map_Marks;

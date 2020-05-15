@@ -4,9 +4,9 @@ public class Tests {
 
 	String id;
 	String course_id;
-	int weight;
+	double weight;
 	
-	public Tests(String id,String course_id,int weight) {
+	public Tests(String id,String course_id,double weight) {
 		this.id=id;
 		this.course_id=course_id;
 		this.weight=weight;
@@ -28,7 +28,7 @@ public class Tests {
 		this.course_id = course_id;
 	}
 
-	public int getWeight() {
+	public double getWeight() {
 		return weight;
 	}
 

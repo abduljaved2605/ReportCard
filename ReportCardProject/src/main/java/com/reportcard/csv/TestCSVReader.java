@@ -18,7 +18,7 @@ public class TestCSVReader extends ReportCardCSVReader {
 	
 	public Map<String,Tests> readTestCSVReader() throws IOException
 	{
-		List<String[]> tests_record = super.readcsvfile("source\\tests.csv");
+		List<String[]> tests_record = super.readcsvfile("source/tests.csv");
 		
 		for(int counter=1;counter<tests_record.size();counter++)
 		{

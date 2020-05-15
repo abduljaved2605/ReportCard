@@ -16,7 +16,7 @@ public class CourseCSVReader extends  ReportCardCSVReader{
 	
 	public Collection<Course> readCourseCSVReader() throws IOException
 	{
-		List<String[]> course_record = super.readcsvfile("source\\courses.csv");
+		List<String[]> course_record = super.readcsvfile("source/courses.csv");
 		List<Course> courses_list = new ArrayList<Course>();
 		
 		for(int counter=1;counter<course_record.size();counter++)
