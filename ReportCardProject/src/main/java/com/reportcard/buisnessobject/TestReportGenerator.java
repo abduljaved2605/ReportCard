@@ -46,21 +46,34 @@ class TestReportGenerator {
 	 * It returns records after reading
 	 * 
 	 */
-	public static Collection<Student> student_record;
-	public static Collection<Course> course_record;
-	public static Map<String,List<Marks>> marks_record;
+	
+	public static 
+	public static 
 	
 	
 	public static List tests_record;
 
 	public static void main(String args[]) throws IOException
 	{
-		student_record = readStudentObj.readStudentcsvfile();
+		
+		Collection<Student> student_record = readStudentObj.readStudentcsvfile();
+		Collection<Course> course_record;
+		Map<String,List<Marks>> marks_record;
+		
 		List<Marks> marks_List = new ArrayList<Marks>();
 		List tofile = new ArrayList<>();
 		marks_record = readMarksObj.readMarksCSVReader();
 		course_record = readCourseObj.readCourseCSVReader();
 		readTestsObj.readTestCSVReader();
+		
+		for (Student studentid: student_record)
+		{
+			System.out.println(studentid.getId());
+		}
+		
+		/*
+		 * 
+		 
 		
 		for(Student sID: student_record)
 		{
@@ -98,7 +111,14 @@ class TestReportGenerator {
 		}
 		
 		writeToFile.write(tofile);
-
+	*/
+	}
+	
+	
+	
+	public void loadCSVFiles()
+	{
+		
 	}
 
 }
